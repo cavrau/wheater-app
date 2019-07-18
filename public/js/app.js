@@ -5,7 +5,7 @@ const apiCall = (search, callback) => {
     if (!search) {
         return { error: 'Provide a search term' }
     }
-    fetch('http://localhost:3000/weather?address=' + search).then((response) => {
+    fetch('/weather?address=' + search).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 callback(data.error, undefined)
